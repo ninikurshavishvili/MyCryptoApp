@@ -11,7 +11,7 @@ struct TransferView: View {
     var body: some View {
         ZStack {
             CustomCapsuleShape()
-                .fill(Color.yellow.opacity(0.4))
+                .fill(Color.yellow.opacity(0.2))
                 .frame(height: 88)
                 .padding(.horizontal)
 
@@ -20,12 +20,10 @@ struct TransferView: View {
                     Image(systemName: "creditcard")
                         .font(.title2)
                         .foregroundColor(.white)
-                    Text("Secure")
-                        .font(.caption)
-                        .foregroundColor(.white)
+
                 }
                 .frame(width: 60, height: 60)
-                .background(Circle().fill(Color.black.opacity(0.8)))
+                .background(Circle().fill(Color.black.opacity(0.4)))
 
                 ZStack {
                     Circle()
@@ -40,12 +38,10 @@ struct TransferView: View {
                     Image(systemName: "car.fill")
                         .font(.title2)
                         .foregroundColor(.white)
-                    Text("Transfer")
-                        .font(.caption)
-                        .foregroundColor(.white)
+
                 }
                 .frame(width: 60, height: 60)
-                .background(Circle().fill(Color.black.opacity(0.8)))
+                .background(Circle().fill(Color.black.opacity(0.4)))
             }
         }
     }
