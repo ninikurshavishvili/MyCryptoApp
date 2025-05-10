@@ -30,7 +30,9 @@ struct TotalValueView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 
-                Image(systemName: "chart.line.uptrend.xyaxis")
+                Image("Sketch")
+                    .resizable()
+                    .frame(width: 30, height: 30)
                 Spacer()
 
             }

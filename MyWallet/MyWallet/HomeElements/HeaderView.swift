@@ -24,7 +24,7 @@ struct HeaderView: View {
             .foregroundColor(Color.purple.opacity(0.8))
             .background(Color.white.opacity(0.2))
             .clipShape(Circle())
-            
+            .padding(.leading)
             //Shadow
             ZStack(alignment: .topTrailing){
 

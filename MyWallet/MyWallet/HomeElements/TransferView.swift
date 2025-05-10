@@ -24,7 +24,7 @@ struct TransferView: View {
                 }
                 .frame(width: 60, height: 60)
                 .background(Circle().fill(Color.black.opacity(0.4)))
-
+                
                 ZStack {
                     Circle()
                         .fill(Color.yellow)

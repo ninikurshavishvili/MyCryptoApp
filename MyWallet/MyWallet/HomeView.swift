@@ -26,7 +26,6 @@ struct HomeView: View {
             
         }
         .foregroundStyle(.black)
-        .ignoresSafeArea()
     }
         
 }
