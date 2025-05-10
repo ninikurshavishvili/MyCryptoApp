@@ -11,13 +11,15 @@ struct TotalValueView: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            HStack {
+            HStack(alignment: .firstTextBaseline) {
                 Text("Total Value")
                     .font(.callout)
                 
                 Image(systemName: "arrowtriangle.down.circle")
                     .frame(width: 20, height: 20)
             }
+            .padding(.horizontal, 20)
+
             
             HStack {
                 Text("$")
@@ -29,10 +31,13 @@ struct TotalValueView: View {
                     .fontWeight(.bold)
                 
                 Image(systemName: "chart.line.uptrend.xyaxis")
-            }
-            
-        }
+                Spacer()
 
+            }
+            .padding(.horizontal, 20)
+
+        }
+        .foregroundStyle(.white)
     }
 }
 
@@ -41,4 +46,5 @@ struct TotalValueView: View {
 
 #Preview {
     TotalValueView()
+        .background(.black)
 }

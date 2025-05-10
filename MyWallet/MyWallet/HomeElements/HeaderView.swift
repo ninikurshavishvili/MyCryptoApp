@@ -15,13 +15,14 @@ struct HeaderView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(.trailing, 80)
+                .foregroundStyle(.white)
             Button(action: {}) {
                 Image(systemName: "plus")
             }
             
             .frame(width: 60, height: 60)
             .foregroundColor(Color.purple.opacity(0.8))
-            .background(Color.secondary.opacity(0.3))
+            .background(Color.white.opacity(0.2))
             .clipShape(Circle())
             
             //Shadow
@@ -51,4 +52,5 @@ struct HeaderView: View {
 
 #Preview {
     HeaderView()
+        .background(.black)
 }
