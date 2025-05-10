@@ -10,20 +10,23 @@ import SwiftUI
 struct TransferView: View {
     var body: some View {
         ZStack {
+            Color(.black)
+                .ignoresSafeArea()
             CustomCapsuleShape()
-                .fill(Color.yellow.opacity(0.2))
+                .fill(Color.yellow.secondary.opacity(0.2))
                 .frame(height: 88)
                 .padding(.horizontal)
 
-            HStack(spacing: 75) {
+            HStack(spacing: 80) {
                 VStack {
                     Image(systemName: "creditcard")
                         .font(.title2)
                         .foregroundColor(.white)
 
                 }
-                .frame(width: 60, height: 60)
-                .background(Circle().fill(Color.black.opacity(0.4)))
+                .frame(width: 70, height: 70)
+                .background(Circle().fill(Color.gray.opacity(0.4)))
+                .padding(.leading, 30)
                 
                 ZStack {
                     Circle()
@@ -40,8 +43,10 @@ struct TransferView: View {
                         .foregroundColor(.white)
 
                 }
-                .frame(width: 60, height: 60)
-                .background(Circle().fill(Color.black.opacity(0.4)))
+                .frame(width: 70, height: 70)
+                .background(Circle().fill(Color.gray.opacity(0.4)))
+                .padding(.trailing, 30)
+
             }
         }
     }
@@ -53,8 +58,8 @@ struct CustomCapsuleShape: Shape {
         let width = rect.width
         let height = rect.height
 
-        let curveWidth: CGFloat = 60
-        let curveDepth: CGFloat = 16
+        let curveWidth: CGFloat = 80
+        let curveDepth: CGFloat = 40
         let cornerRadius = height / 2
 
         path.move(to: CGPoint(x: 0, y: cornerRadius))
@@ -66,15 +71,27 @@ struct CustomCapsuleShape: Shape {
                     endAngle: .degrees(270),
                     clockwise: false)
 
+
         // Top edge with 2 smooth inward dips
         path.addLine(to: CGPoint(x: width / 3 - curveWidth / 2, y: 0))
         path.addQuadCurve(to: CGPoint(x: width / 3 + curveWidth / 2, y: 0),
                           control: CGPoint(x: width / 3, y: curveDepth))
+        
+        //____________________________________________________________
         path.addLine(to: CGPoint(x: 2 * width / 3 - curveWidth / 2, y: 0))
+        
+        //____________________________________________________________
+
         path.addQuadCurve(to: CGPoint(x: 2 * width / 3 + curveWidth / 2, y: 0),
                           control: CGPoint(x: 2 * width / 3, y: curveDepth))
+        
+        //____________________________________________________________
+
         path.addLine(to: CGPoint(x: width - cornerRadius, y: 0))
 
+        
+        
+        
         // Top-right corner arc
         path.addArc(center: CGPoint(x: width - cornerRadius, y: cornerRadius),
                     radius: cornerRadius,
