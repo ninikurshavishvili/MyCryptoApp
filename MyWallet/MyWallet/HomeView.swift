@@ -11,21 +11,23 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color(.black)
-            VStack {
-                HeaderView()
-                
-                TotalValueView()
-                
-                TransferView()
-                
-                StartView()
-                
-                CryptoListView(cryptoLists: cryptoList)
+                .ignoresSafeArea()
+            ScrollView {
+                VStack {
+
+                    HeaderView()
+                    
+                    TotalValueView()
+                    
+                    TransferView()
+                    
+                    StartView()
+                    
+                    CryptoListView(cryptoLists: cryptoList)
+                }
             }
             
-            
         }
-        .foregroundStyle(.black)
     }
         
 }
