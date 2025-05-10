@@ -17,18 +17,21 @@ struct HeaderView: View {
                 .padding(.trailing, 50)
             
             ZStack {
-                // Actual button with shadow behind
+                Circle()
+                    .fill(Color.secondary)
+                
+                    .frame(width: 60, height: 60)
+                    .shadow(color: Color.white.opacity(0.3), radius: 7, x: -10, y: 2)
+
                 Button(action: {}) {
                     Image(systemName: "plus")
-                        .foregroundColor(Color.purple.opacity(0.8))
-                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(Color.purple)
+                        .tint(Color.red)
+                        .font(.title3)
+                        .frame(width: 60, height: 60)
                 }
-                .frame(width: 60, height: 60)
-                .background(Color.secondary)
-                .clipShape(Circle())
-                .shadow(color: Color.white.opacity(0.4), radius: 12, x: -12, y: 6) // Back shadow
             }
-            .padding(.leading, 10)
+            .padding(.leading, 80)
 
             ZStack(alignment: .topTrailing) {
                 Button(action: {}) {
@@ -38,15 +41,19 @@ struct HeaderView: View {
                         .clipShape(Circle())
                         .overlay(
                             Circle()
-                                .stroke(Color.yellow, lineWidth: 1)
+                                .stroke(Color.yellow, lineWidth: 1.5)
                         )
                 }
 
-                Image(systemName: "crown.fill")
+                Image("crown")
+                    .resizable()
+                    .frame(width: 29, height: 29)
                     .foregroundColor(.yellow)
-                    .offset(x: 7, y: -7)
-                    .rotationEffect(Angle(degrees: 30))
+                    .offset(x: 3, y: -15)
+                    .rotationEffect(Angle(degrees: 45))
             }
+            .offset(x: -20)
+
         }
     }
 }
