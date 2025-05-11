@@ -12,7 +12,7 @@ struct StartView: View {
         ZStack(alignment: .leading) {
 
             CustomSlopedRoundedRectangle()
-                .fill(Color.blue)
+                .fill(Color.white.opacity(0.1))
                 .frame(width: 400, height: 200)
                 .padding()
             
@@ -89,4 +89,5 @@ struct CustomButtonShape: Shape {
 
 #Preview {
     StartView()
+        .background(.black)
 }
