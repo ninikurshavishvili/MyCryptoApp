@@ -25,7 +25,6 @@ struct StartView: View {
                         .foregroundStyle(.white)
                     CustomStartButton()
                         .offset(x: -45, y: 9)
-                    
                 }
             }
             
