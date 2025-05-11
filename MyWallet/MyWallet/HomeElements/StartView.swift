@@ -19,14 +19,12 @@ struct StartView: View {
             HStack(alignment: .top) {
                 VStack {
                     Text("New \n financial forecast \n for Bitcoin")
-                        .padding(.leading, 40)
+                        .padding(.leading, 35)
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
-                        .padding(.bottom)
                     CustomStartButton()
-                        .padding(.leading, 1)
-                        .padding(.trailing, 70)
+                        .offset(x: -45, y: 9)
                     
                 }
             }
@@ -58,33 +56,53 @@ struct CustomSlopedRoundedRectangle: Shape {
 }
 
 struct CustomStartButton: View {
+    var width: CGFloat = 150
+    var height: CGFloat = 60
+    
     var body: some View {
         Text("START")
             .font(.headline)
             .fontWeight(.bold)
-            .foregroundColor(Color.black)
-            .padding(.horizontal, 24)
-            .padding(.vertical, 8)
+            .foregroundColor(.black)
+            .frame(width: width, height: height)
             .background(Color.yellow)
             .clipShape(CustomButtonShape())
     }
 }
 
+
 struct CustomButtonShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.maxX - 20, y: rect.minY))
-        path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.minY + 20), control: CGPoint(x: rect.maxX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - 5))
-        path.addQuadCurve(to: CGPoint(x: rect.maxX - 20, y: rect.maxY), control: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
-        path.closeSubpath()
+        let bottomLeftRadius: CGFloat = 30
 
+        // Start at top-left
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        
+        // Top edge
+        path.addLine(to: CGPoint(x: rect.maxX - 30, y: rect.minY))
+        path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.minY + 30),
+                          control: CGPoint(x: rect.maxX, y: rect.minY))
+        
+        // Right edge and bottom-right corner
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX + bottomLeftRadius, y: rect.maxY))
+        
+        // Bottom-left corner (rounded)
+        path.addQuadCurve(to: CGPoint(x: rect.minX, y: rect.maxY - bottomLeftRadius),
+                          control: CGPoint(x: rect.minX, y: rect.maxY))
+
+        // Left edge
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+
+        path.closeSubpath()
         return path
     }
 }
+
+
+
 
 
 #Preview {
