@@ -75,7 +75,7 @@ struct CustomButtonShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        let bottomLeftRadius: CGFloat = 30
+        let bottomLeftRadius: CGFloat = 50
 
         // Start at top-left
         path.move(to: CGPoint(x: rect.minX, y: rect.minY))
@@ -90,8 +90,8 @@ struct CustomButtonShape: Shape {
         path.addLine(to: CGPoint(x: rect.minX + bottomLeftRadius, y: rect.maxY))
         
         // Bottom-left corner (rounded)
-        path.addQuadCurve(to: CGPoint(x: rect.minX, y: rect.maxY - bottomLeftRadius),
-                          control: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addQuadCurve(to: CGPoint(x: rect.minX + 10, y: rect.maxY - 100),
+                          control: CGPoint(x: rect.minX - 30, y: rect.maxY + 12))
 
         // Left edge
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
