@@ -77,16 +77,13 @@ struct CustomCapsuleShape: Shape {
         path.addQuadCurve(to: CGPoint(x: width / 3 + curveWidth / 2, y: 0),
                           control: CGPoint(x: width / 3, y: curveDepth))
         
-        //____________________________________________________________
         path.addLine(to: CGPoint(x: 2 * width / 3 - curveWidth / 2, y: 0))
         
-        //____________________________________________________________
 
+        
         path.addQuadCurve(to: CGPoint(x: 2 * width / 3 + curveWidth / 2, y: 0),
                           control: CGPoint(x: 2 * width / 3, y: curveDepth))
         
-        //____________________________________________________________
-
         path.addLine(to: CGPoint(x: width - cornerRadius, y: 0))
 
         
