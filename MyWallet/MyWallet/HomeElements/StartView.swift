@@ -10,7 +10,7 @@ import SwiftUI
 struct StartView: View {
     var body: some View {
         ZStack(alignment: .leading) {
-
+            
             CustomSlopedRoundedRectangle()
                 .fill(Color.white.opacity(0.1))
                 .frame(width: 400, height: 200)
@@ -20,12 +20,16 @@ struct StartView: View {
                 VStack {
                     Text("New \n financial forecast \n for Bitcoin")
                         .padding(.leading, 35)
+                        .padding(.top)
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
+                    
                     CustomStartButton()
-                        .offset(x: -45, y: 9)
+                        .offset(x: -45, y: 2)
+                    
                 }
+                
             }
             
         }
