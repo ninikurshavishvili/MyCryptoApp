@@ -16,6 +16,8 @@ struct StartView: View {
                 .frame(width: 400, height: 200)
                 .padding()
             
+
+            
             HStack(alignment: .top) {
                 VStack {
                     Text("New \n financial forecast \n for Bitcoin")
@@ -28,9 +30,21 @@ struct StartView: View {
                     CustomStartButton()
                         .offset(x: -45, y: 2)
                     
+                    
+                    
                 }
-                
+                HStack(){
+                    Image("btcUP")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .padding(.trailing, 20)
+                        .offset(y: 60)
+                        .rotationEffect(Angle(degrees: -10))
+
+                        
+                }
             }
+            
             
         }
     }
