@@ -15,6 +15,8 @@ struct CryptoListView: View {
             RoundedRectangle(cornerRadius: 24)
                 .fill(Color.gray.opacity(0.1))
                 .padding()
+                .shadow(color: Color.appYellow.opacity(0.3), radius: 30, x: 200, y: -7)
+
             VStack(spacing: 16) {
                 ForEach(cryptoLists, id: \.self) { crypto in
                     HStack {
@@ -27,15 +29,17 @@ struct CryptoListView: View {
                                 .foregroundStyle(.white)
                                 .font(.headline)
                             Text(crypto.change)
-                                .foregroundColor(crypto.change.hasPrefix("-") ? .red : .green)
+                                .foregroundColor(crypto.change.hasPrefix("-") ? .appRed : .appYellow)
+                                .font(.callout)
                         }
 
                         Spacer()
-
+                          
                         VStack(alignment: .trailing) {
                             Text(crypto.nameQuantity)
                             Text(crypto.price)
                         }
+                        .shadow(color: Color.appYellow.opacity(0.9), radius: 20)
                         .foregroundColor(.white)
 
 
@@ -47,13 +51,16 @@ struct CryptoListView: View {
                                 .background(Color.gray.opacity(0.1))
                             
                         }
+                        
                         .cornerRadius(10)
 
                     }
+
                     .padding()
                     .cornerRadius(12)
                 }
             }
+
             .padding()
         }
 

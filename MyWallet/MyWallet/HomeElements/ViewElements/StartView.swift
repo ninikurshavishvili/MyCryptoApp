@@ -32,16 +32,16 @@ struct StartView: View {
                         
                         
                     }
-                    HStack(){
-                        Image("btcUP")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .padding(.trailing, 20)
-                            .offset(y: 60)
-                            .rotationEffect(Angle(degrees: -10))
-                        
-                        
-                    }
+//                    HStack(){
+//                        Image("btcUP")
+//                            .resizable()
+//                            .frame(width: 100, height: 100)
+//                            .padding(.trailing, 20)
+//                            .offset(y: 100)
+//                            .rotationEffect(Angle(degrees: -10))
+//                        
+//                        
+//                    }
                     
                 }
             }
@@ -84,9 +84,10 @@ struct CustomStartButton: View {
         Text("START")
             .font(.headline)
             .fontWeight(.bold)
-            .foregroundColor(.black)
+            .foregroundColor(.appYellow)
+            .shadow(color: Color.appYellow, radius: 20)
             .frame(width: width, height: height)
-            .background(Color.yellow)
+            .background(Color.secondary)
             .clipShape(CustomButtonShape())
     }
 }
