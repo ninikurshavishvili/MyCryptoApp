@@ -31,6 +31,8 @@ struct CryptoListView: View {
                             Text(crypto.change)
                                 .foregroundColor(crypto.change.hasPrefix("-") ? .appRed : .appYellow)
                                 .font(.callout)
+                                .fontWeight(.light)
+
                         }
 
                         Spacer()
@@ -38,6 +40,8 @@ struct CryptoListView: View {
                         VStack(alignment: .trailing) {
                             Text(crypto.nameQuantity)
                             Text(crypto.price)
+                                .fontWeight(.light)
+
                         }
                         .shadow(color: Color.appYellow.opacity(0.9), radius: 20)
                         .foregroundColor(.white)

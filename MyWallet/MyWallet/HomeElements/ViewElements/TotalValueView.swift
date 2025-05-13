@@ -13,7 +13,8 @@ struct TotalValueView: View {
             
             HStack(alignment: .firstTextBaseline) {
                 Text("Total Value")
-                    .font(.callout)
+                    .font(.subheadline)
+                    .fontWeight(.light)
                 
                 Image(systemName: "arrowtriangle.down.circle")
                     .frame(width: 20, height: 20)

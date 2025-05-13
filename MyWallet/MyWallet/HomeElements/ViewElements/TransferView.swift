@@ -13,7 +13,7 @@ struct TransferView: View {
             Color(.black)
                 .ignoresSafeArea()
             CustomCapsuleShape()
-                .fill(Color.yellow.secondary.opacity(0.2))
+                .fill(Color.appYellow.secondary.opacity(0.1))
                 .frame(height: 88)
                 .padding(.horizontal)
 
@@ -24,13 +24,13 @@ struct TransferView: View {
                         .foregroundColor(.white)
 
                 }
-                .frame(width: 70, height: 70)
+                .frame(width: 60, height: 60)
                 .background(Circle().fill(Color.gray.opacity(0.4)))
                 .padding(.leading, 30)
                 
                 ZStack {
                     Circle()
-                        .fill(Color.yellow)
+                        .fill(Color.appYellow)
                         .frame(width: 70, height: 70)
                     Image(systemName: "arrow.up.circle.fill")
                         .font(.largeTitle)
@@ -43,7 +43,7 @@ struct TransferView: View {
                         .foregroundColor(.white)
 
                 }
-                .frame(width: 70, height: 70)
+                .frame(width: 60, height: 60)
                 .background(Circle().fill(Color.gray.opacity(0.4)))
                 .padding(.trailing, 30)
 
