@@ -19,5 +19,5 @@ struct Crypto: Identifiable, Hashable {
 
 let cryptoList: [Crypto] = [
     Crypto(name: "BTC",  price: "69,792.45 USD", change: "+24.18%", nameQuantity: "1 BTC", image: "bitcoin"),
-    Crypto(name: "XRP",  price: "0,5158 USD", change: "-24.18%", nameQuantity: "1 XRP",  image: "bitcoin")
+    Crypto(name: "XRP",  price: "0,5158 USD", change: "-24.18%", nameQuantity: "1 XRP",  image: "xrp")
 ]

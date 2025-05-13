@@ -23,12 +23,12 @@ struct TotalValueView: View {
             
             HStack {
                 Text("$")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.blue)
-                Text ("123.456.78")
-                    .font(.title)
-                    .fontWeight(.bold)
+                    .font(.system(size: 46, weight: .bold))
+                    .foregroundStyle(Color.appPurple)
+
+                Text ("230,380.00")
+                    .font(.system(size: 46, weight: .bold))
+
                 
                 Image("Sketch")
                     .resizable()

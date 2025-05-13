@@ -25,7 +25,7 @@ struct HeaderView: View {
 
                 Button(action: {}) {
                     Image(systemName: "plus")
-                        .foregroundColor(Color.purple)
+                        .foregroundColor(Color.appPurple)
                         .tint(Color.red)
                         .font(.title3)
                         .frame(width: 60, height: 60)
