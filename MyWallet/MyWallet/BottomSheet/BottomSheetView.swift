@@ -7,28 +7,24 @@
 
 import SwiftUI
 
-struct BottomSheetView : View {
-    @State private var isShowingSheet = false
+struct BottomSheetView: View {
+    var crypto: Crypto
+
     var body: some View {
-        Button(action: {
-            isShowingSheet.toggle()
-        }) {
-            Text("Show License Agreement")
+        VStack(spacing: 20) {
+            Text(crypto.name)
+                .font(.title)
+                .padding()
+
+            Text("Price: \(crypto.price)")
+                .font(.headline)
+
+            Text("Change: \(crypto.change)")
+                .foregroundColor(crypto.change.hasPrefix("-") ? .red : .green)
+
+            Spacer()
         }
-        .sheet(isPresented: $isShowingSheet,
-               onDismiss: didDismiss) {
-            VStack {
-                Text("License Agreement")
-                    .font(.title)
-                    .padding(50)
-                Text("""
-                            Terms and conditions go here.
-                        """)
-                .padding(50)
-                Button("Dismiss",
-                       action: { isShowingSheet.toggle() })
-            }
-        }
+        .padding()
     }
 }
 
@@ -36,7 +32,3 @@ struct BottomSheetView : View {
     func didDismiss() {
         // Handle the dismissing action.
     }
-
-#Preview {
-    BottomSheetView()
-}

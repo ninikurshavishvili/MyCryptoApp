@@ -70,6 +70,11 @@ struct CryptoListView: View {
             }
             
         }
+        .sheet(isPresented: $showSheet) {
+                    if let crypto = selectedCrypto {
+                        BottomSheetView(crypto: crypto)
+                    }
+                }
     }
 }
 
