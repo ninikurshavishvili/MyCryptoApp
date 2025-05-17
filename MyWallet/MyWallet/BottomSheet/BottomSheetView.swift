@@ -12,15 +12,17 @@ struct BottomSheetView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(crypto.name)
-                .font(.title)
-                .padding()
+            
+            HStack {
+                
+                Image(systemName: "arrowshape.left.arrowshape.right")
+                
+                Image(crypto.image)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                
+            }
 
-            Text("Price: \(crypto.price)")
-                .font(.headline)
-
-            Text("Change: \(crypto.change)")
-                .foregroundColor(crypto.change.hasPrefix("-") ? .red : .green)
 
             Spacer()
         }
@@ -30,5 +32,15 @@ struct BottomSheetView: View {
 
 
     func didDismiss() {
-        // Handle the dismissing action.
+        
     }
+
+#Preview {
+    BottomSheetView(crypto: Crypto(
+        name: "Bitcoin",
+        price: "btc",
+        change: "+2.4%",
+        nameQuantity: "1.2 BTC",
+        image: "bitcoin"
+    ))
+}
