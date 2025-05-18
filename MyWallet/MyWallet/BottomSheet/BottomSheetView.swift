@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BottomSheetView: View {
     var crypto: Crypto
-
+    
     var body: some View {
         
         ZStack {
@@ -19,17 +19,29 @@ struct BottomSheetView: View {
             VStack(spacing: 20) {
                 HStack {
                     
-                    Image("transferIcon")
-                        .resizable()
-                        .frame(width: 30, height: 30)
+                    HStack {
+                        Image("transferIcon")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .padding(10)
+                    .background(Color.secondary)
+                    .cornerRadius(50)
                     
+                    HStack {
+                        Image(crypto.image)
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
+                    .padding()
+                    .background(.secondary)
+                    .cornerRadius(50)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 50)
+                            .stroke(.appPurple, lineWidth: 1)
+                    )
                     
-                    Image(crypto.image)
-                        .resizable()
-                        .frame(width: 50, height: 50)
                 }
-                
-                
                 
                 Spacer()
             }
