@@ -22,7 +22,6 @@ struct BottomSheetView: View {
                     Image("transferIcon")
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .foregroundStyle(Color.white)
                     
                     
                     Image(crypto.image)
