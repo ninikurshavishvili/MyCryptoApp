@@ -11,22 +11,32 @@ struct BottomSheetView: View {
     var crypto: Crypto
 
     var body: some View {
-        VStack(spacing: 20) {
+        
+        ZStack {
+            Color(.black)
+                .ignoresSafeArea()
             
-            HStack {
+            VStack(spacing: 20) {
+                HStack {
+                    
+                    Image("transferIcon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundStyle(Color.white)
+                    
+                    
+                    Image(crypto.image)
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                }
                 
-                Image(systemName: "arrowshape.left.arrowshape.right")
                 
-                Image(crypto.image)
-                    .resizable()
-                    .frame(width: 50, height: 50)
                 
+                Spacer()
             }
-
-
-            Spacer()
+            .padding()
         }
-        .padding()
+        
     }
 }
 
