@@ -28,6 +28,8 @@ struct BottomSheetView: View {
                     .background(Color.secondary)
                     .cornerRadius(50)
                     
+                    Spacer()
+                    
                     HStack {
                         Image(crypto.image)
                             .resizable()
@@ -40,6 +42,20 @@ struct BottomSheetView: View {
                         RoundedRectangle(cornerRadius: 50)
                             .stroke(.appPurple, lineWidth: 1)
                     )
+                    Spacer()
+
+                    HStack {
+                        Text("12")
+                        Button {
+                            print("Edit button was tapped")
+                        } label: {
+                            Image(systemName: "chevron.down")
+                        }
+
+                    }
+                    .padding(10)
+                    .background(Color.secondary)
+                    .cornerRadius(50)
                     
                 }
                 
