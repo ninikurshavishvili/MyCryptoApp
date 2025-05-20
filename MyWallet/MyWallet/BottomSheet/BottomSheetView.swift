@@ -59,6 +59,22 @@ struct BottomSheetView: View {
                     
                 }
                 
+                VStack {
+                    Text(crypto.name)
+                        .foregroundStyle(.white)
+                        .font(.callout)
+                    
+                    Text(crypto.price)
+                        .font(.title)
+                        .foregroundStyle(.appPurple)
+                    
+                    Text(crypto.change)
+                        .font(.caption)
+                        .foregroundStyle(.appRed)
+                    
+                    
+                }
+                
                 Spacer()
             }//lalala
             .padding()
@@ -75,7 +91,7 @@ struct BottomSheetView: View {
 #Preview {
     BottomSheetView(crypto: Crypto(
         name: "Bitcoin",
-        price: "btc",
+        price: "69.000",
         change: "+2.4%",
         nameQuantity: "1.2 BTC",
         image: "bitcoin"
