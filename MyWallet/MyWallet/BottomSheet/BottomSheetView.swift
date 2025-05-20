@@ -58,20 +58,24 @@ struct BottomSheetView: View {
                     .cornerRadius(50)
                     
                 }
+                .padding(20)
+                
                 
                 VStack {
                     Text(crypto.name)
                         .foregroundStyle(.white)
                         .font(.callout)
+                        .padding()
                     
                     Text(crypto.price)
                         .font(.title)
                         .foregroundStyle(.appPurple)
+                        .padding()
                     
                     Text(crypto.change)
                         .font(.caption)
                         .foregroundStyle(.appRed)
-                    
+                        .padding()
                     
                 }
                 
