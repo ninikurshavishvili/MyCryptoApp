@@ -76,6 +76,8 @@ struct BottomSheetView: View {
                         .font(.caption)
                         .foregroundStyle(.appRed)
                         .padding()
+                        .background(.white.opacity(0.1))
+                        .cornerRadius(20)
                     
                 }
                 
