@@ -81,7 +81,7 @@ struct BottomSheetView: View {
                     
                 }
                 
-                
+                ChartView()
                 
                 Spacer()
             }//lalala
