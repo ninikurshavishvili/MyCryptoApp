@@ -11,25 +11,28 @@ import SwiftUI
 
 struct ChartView: View {
     var body: some View {
-        VStack {
-            Chart {
-                ForEach(candle_btc) { item in
-                    RectangleMark(x: .value("Day", item.day),
-                                  yStart: .value("lowPrice", item.lowPrice),
-                                  yEnd: .value("high price", item.highPrice),
-                                  width: 4
-                    )
-                    .opacity(0.4)
-                    
-                    RectangleMark(x: .value("Day", item.day),
-                                  yStart: .value("lowPrice", item.openPrice),
-                                  yEnd: .value("high price", item.closePrice),
-                                  width: 12
-                    )
+        NavigationStack {
+            VStack {
+                Chart {
+                    ForEach(candle_btc) { item in
+                        RectangleMark(x: .value("Day", item.day),
+                                      yStart: .value("lowPrice", item.lowPrice),
+                                      yEnd: .value("high price", item.highPrice),
+                                      width: 4
+                        )
+                        .opacity(0.4)
+                        
+                        RectangleMark(x: .value("Day", item.day),
+                                      yStart: .value("lowPrice", item.openPrice),
+                                      yEnd: .value("high price", item.closePrice),
+                                      width: 12
+                        )
+                    }
                 }
+                .padding(40)
             }
-            .padding(40)
         }
+        .navigationTitle("")
     }
 }
 
