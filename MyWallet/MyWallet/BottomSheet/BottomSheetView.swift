@@ -67,12 +67,12 @@ struct BottomSheetView: View {
                         .font(.callout)
                         .padding()
                     
-                    Text(crypto.price)
+                    Text(" $ \(crypto.price)")
                         .font(.title)
                         .foregroundStyle(.appPurple)
                         .padding()
                     
-                    Text(crypto.change)
+                    Text(" $ \(crypto.change)")
                         .font(.caption)
                         .foregroundStyle(.appRed)
                         .padding()
