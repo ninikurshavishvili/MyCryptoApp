@@ -76,7 +76,6 @@ struct ChartView: View {
                 }
                 .background(Color.black)
             }
-            .navigationTitle("BTC Candles")
         }
         .preferredColorScheme(.dark)
     }
