@@ -29,8 +29,8 @@ struct ChartView: View {
                             yEnd: .value("Close", item.closePrice),
                             width: 4
                         )
-                        .foregroundStyle(item.closePrice >= item.openPrice ? .appRed : .appPurple)
-                        .cornerRadius(1)
+                        .foregroundStyle(item.closePrice >= item.openPrice ? .appYellow : .appPurple)
+                        .cornerRadius(10)
                     }
 
                     RuleMark(y: .value("Target", 35000))
