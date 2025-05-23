@@ -15,7 +15,6 @@ struct ChartView: View {
             VStack {
                 Chart {
                     ForEach(candle_btc) { item in
-                        // Candle wick
                         RuleMark(
                             x: .value("Day", item.day),
                             yStart: .value("Low", item.lowPrice),
@@ -24,23 +23,20 @@ struct ChartView: View {
                         .foregroundStyle(.white)
                         .lineStyle(StrokeStyle(lineWidth: 1))
 
-                        // Candle body
                         RectangleMark(
                             x: .value("Day", item.day),
                             yStart: .value("Open", item.openPrice),
                             yEnd: .value("Close", item.closePrice),
                             width: 4
                         )
-                        .foregroundStyle(item.closePrice >= item.openPrice ? .green : .red)
+                        .foregroundStyle(item.closePrice >= item.openPrice ? .appRed : .appPurple)
                         .cornerRadius(1)
                     }
 
-                    // Dashed highlight line
                     RuleMark(y: .value("Target", 35000))
                         .lineStyle(StrokeStyle(lineWidth: 1, dash: [4]))
                         .foregroundStyle(Color.yellow)
 
-                    // $35k label
                     PointMark(x: .value("Label Day", "2024-06-25"), y: .value("Price", 35000))
                         .annotation(position: .top) {
                             Text("$35k")
@@ -51,7 +47,6 @@ struct ChartView: View {
                                 .clipShape(Capsule())
                         }
 
-                    // $11k label
                     PointMark(x: .value("Label Day", "2024-06-17"), y: .value("Price", 11000))
                         .annotation(position: .bottom) {
                             Text("$11k")
