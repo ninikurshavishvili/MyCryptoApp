@@ -1,4 +1,14 @@
 # 💰 Crypto Portfolio App (SwiftUI)
+## 📱 App Screenshots
+
+Here are some sample screenshots from the app:
+
+### 🔸 Home View
+![Crypto List](MyWallet/MyWallet/HomeElements/ModelAndViewModel/SCREENS/My_Wallet_Home.png)
+
+### 🔸 Cripto info View
+![Total Value](MyWallet/MyWallet/HomeElements/ModelAndViewModel/SCREENS/My_wallet_BTC.png)
+
 
 This is a **SwiftUI-based cryptocurrency portfolio application** designed to visually present mock crypto data in a sleek and elegant interface. It incorporates custom shapes, reusable views, and animated elements to simulate a crypto tracking experience. Although it uses mock data, the app structure is easily extendable to support real APIs.
 
