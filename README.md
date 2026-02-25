@@ -1,4 +1,4 @@
-# 💰 Crypto Portfolio App (SwiftUI)
+# 💰 Crypto Portfolio App - SwiftUI
 ## 📱 App Screenshots
 
 Here are some sample screenshots from the app:
